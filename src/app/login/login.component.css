@@ -1,0 +1,16 @@
+a:link {
+  text-decoration: none;
+}
+
+.log {
+  background-color: #015155;
+  border-radius: 25px;
+}
+
+.card {
+  width: 60%;
+}
+
+.pass {
+  text-align: right;
+}

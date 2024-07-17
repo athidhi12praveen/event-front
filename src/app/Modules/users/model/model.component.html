@@ -1,0 +1,147 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 fw-bolder" id="staticBackdropLabel">
+        Book Now
+      </h1>
+
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <div class="modal-body">
+      <form [formGroup]="bookForm" (ngSubmit)="book()">
+        <div class="">
+          <!-- validation error-name -->
+          <div
+            *ngIf="
+              this.bookForm.get('name')?.errors &&
+              this.bookForm.get('name')?.touched
+            "
+            class="fw-bold text-danger text-center"
+          >
+            Invalid Name !
+          </div>
+          <!-- name -->
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              placeholder="Username"
+              formControlName="name"
+            />
+            <label for="name"> Name</label>
+          </div>
+          <!-- validation error-mobile -->
+          <div
+            *ngIf="
+              this.bookForm.get('mobile')?.errors &&
+              this.bookForm.get('mobile')?.touched
+            "
+            class="fw-bold text-danger text-center"
+          >
+            Invalid Mobile Number !
+          </div>
+          <!-- mobile -->
+          <div class="form-floating">
+            <input
+              type="mobile"
+              class="form-control mb-2"
+              name="mobile"
+              id="mobile"
+              placeholder="mobile"
+              formControlName="mobile"
+            />
+            <label for="mobile">Mobile Number</label>
+          </div>
+          <!-- validation error-location -->
+          <div
+            *ngIf="
+              this.bookForm.get('location')?.errors &&
+              this.bookForm.get('location')?.touched
+            "
+            class="fw-bold text-danger text-center"
+          >
+            Invalid location !
+          </div>
+          <!-- location -->
+          <div class="form-floating">
+            <input
+              type="location"
+              class="form-control mb-2"
+              name="location"
+              id="location"
+              placeholder="mobile"
+              formControlName="location"
+            />
+            <label for="location">Location</label>
+          </div>
+          <!-- validation error-address -->
+          <div
+            *ngIf="
+              this.bookForm.get('address')?.errors &&
+              this.bookForm.get('address')?.touched
+            "
+            class="fw-bold text-danger text-center"
+          >
+            Invalid Address !
+          </div>
+          <!-- address -->
+          <div class="form-floating">
+            <input
+              type="address"
+              class="form-control mb-2"
+              name="address"
+              id="address"
+              placeholder="address"
+              formControlName="address"
+            />
+            <label for="address">Address</label>
+          </div>
+          <!-- validation error-date -->
+          <div
+            *ngIf="
+              this.bookForm.get('date')?.errors &&
+              this.bookForm.get('date')?.touched
+            "
+            class="fw-bold text-danger text-center"
+          >
+            Invalid Date !
+          </div>
+
+          <div class="form-floating">
+            <input
+              type="date"
+              value=""
+              class="form-control mb-2"
+              formControlName="date"
+            />
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: space-between">
+          <button
+            type="button"
+            class="btn btn-danger ps-5 pe-5"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            class="btn text-light ps-5 pe-5"
+            data-bs-dismiss="modal"
+            style="background-color: #015155"
+          >
+            Confirm
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+  
+<!-- user view -->
+<section >
+  <div  class="container">
+    <div class="card d-flex mb-5 pb-3 ms-2" style="border: white;">
+      <div class=" mt-5 ms-2 me-5   mb-5"style="container-fluid">
+        <input class="form-control " [(ngModel)]="searchKey" type="text" name="search" placeholder="Search Events" >
+      </div>
+      <div class="row" >
+        <div *ngFor="let events of allevents | search : searchKey : 'title' "  class="card shadow p-2  mb-5 text-light ms-2  me-5" style=" cursor: pointer; width: 380px;">
+          <img [src]="events.image" class="card-img-top img-fluid" alt="..." routerLink="singleview/{{events.id}}" />
+            <div class="card-body text-center p-2" style="background-color: black; border-radius: 2px;">
+              <h5 class="card-title" style=" color: white">{{events.title}}</h5>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  
+
+  
+
+ 
+  
+

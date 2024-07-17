@@ -1,0 +1,140 @@
+<!-- header -->
+<app-admin></app-admin>
+
+<!-- edit admin page -->
+<div class="mt-5">
+  <section class="text-center mt-4">
+    <div
+      class="card mx-5 mx-md-5 my-5"
+      style="
+        margin-top: -100px;
+        background: linear-gradient(
+          90deg,
+          rgba(5, 81, 83, 1) 0%,
+          rgba(0, 0, 0, 1) 55%
+        );
+      "
+    >
+      <div class="card-body">
+        <div class="row">
+          <div class="title">
+            <h1 class="ms-5 mt-5 text-light text-center"><b>EDIT EVENTS</b></h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <img
+                src="https://i.postimg.cc/0546XKxy/Black-And-White-Illustrated-Eagle-Logo-removebg-preview.png"
+                alt="no image"
+                width="400px"
+                style="margin-top: 100px"
+              />
+            </div>
+            <div class="col-lg-8">
+              <form [formGroup]="editForm" (ngSubmit)="Submit(id)">
+                <div class="m-5">
+                  <!-- validation error-id -->
+                  <!-- <div *ngIf="this.addForm.get('id')?.errors&&this.addForm.get('id')?.touched" class="fw-bold text-danger">Invalid Id</div> -->
+                  <!-- id -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="id"
+                      class="form-control"
+                      id="id"
+                      placeholder="id"
+                      formControlName="id"
+                    />
+                    <label for="id">Event Id</label>
+                  </div>
+                </div>
+                <div class="m-5">
+                  <!-- validation error-title -->
+                  <!-- <div *ngIf="this.addForm.get('title')?.errors&&this.addForm.get('title')?.touched" class="fw-bold text-danger">Invalid Title</div> -->
+                  <!-- title -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="title"
+                      class="form-control"
+                      id="title"
+                      placeholder="title"
+                      formControlName="title"
+                    />
+                    <label for="title">Event Title</label>
+                  </div>
+                </div>
+                <div class="m-5">
+                  <!-- validation error-url -->
+                  <!-- <div *ngIf="this.addForm.get('image')?.errors&&this.addForm.get('image')?.touched" class="fw-bold text-danger">Invalid Url</div> -->
+                  <!-- url -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="url"
+                      name="url"
+                      class="form-control"
+                      id="image"
+                      placeholder="image url"
+                      formControlName="image"
+                    />
+                    <label for="image">Image Url</label>
+                  </div>
+                </div>
+                <div class="m-5">
+                  <!-- validation error-description -->
+                  <!-- <div *ngIf="this.addForm.get('description')?.errors&&this.addForm.get('description')?.touched" class="fw-bold text-danger">Invalid Description</div> -->
+                  <!-- description -->
+                  <div class="form-floating mb-3">
+                    <input
+                      name="description"
+                      class="form-control"
+                      placeholder="description"
+                      id="description"
+                      formControlName="description"
+                    />
+                    <label for="description">Description</label>
+                  </div>
+                </div>
+                <div class="m-5">
+                  <!-- validation error-price -->
+                  <!-- <div *ngIf="this.addForm.get('price')?.errors&&this.addForm.get('price')?.touched" class="fw-bold text-danger">Invalid price</div> -->
+                  <!-- price -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="price"
+                      class="form-control"
+                      id="price"
+                      placeholder="price"
+                      formControlName="price"
+                    />
+                    <label for="price">price</label>
+                  </div>
+                </div>
+
+                <!-- cancel button -->
+                <div class="ms-5 me-5 mb-3">
+                  <button
+                    type="submit"
+                    class="btn btn-danger btn-block w-100 pt-3 pb-3 fw-bold"
+                  >
+                    CANCEL
+                  </button>
+                </div>
+                <!-- update button -->
+                <div class="ms-5 me-5 mb-5">
+                  <button
+                    type="submit"
+                    class="btn btn-dark btn-block w-100 pt-3 pb-3 fw-bold"
+                  >
+                    UPDATE
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Section: Design Block -->

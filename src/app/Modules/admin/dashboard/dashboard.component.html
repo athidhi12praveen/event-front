@@ -1,0 +1,40 @@
+<!-- header -->
+<app-admin></app-admin>
+
+<!-- booking details view -->
+<div class="my-card d-flex row ms-5 me-5 mt-5 mb-5">
+  <div
+    name="card"
+    *ngFor="let bookings of allbookings"
+    class="card shadow p-2 col-lg-3 mb-5 text-light"
+    style="width: 100%"
+  >
+    <div className="d-flex">
+      <div class="row">
+        <div class="col-lg-4">
+          <img
+            [src]="bookings.eventimg"
+            alt="no image"
+            style="width: 317px; height: 300px; border-radius: 3px"
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="card-body text-center p-2 mt-4">
+            <h3 class="card-text text-black">{{ bookings.event }}</h3>
+            <p class="card-text text-secondary">NAME : {{ bookings.name }}</p>
+            <p class="card-text text-secondary">
+              E-MAIL : {{ bookings.usermail }}
+            </p>
+            <p class="card-text text-secondary">
+              MOBILE : {{ bookings.mobile }}
+            </p>
+            <p class="card-text text-secondary">
+              LOCATION : {{ bookings.location }}
+            </p>
+            <p class="card-text text-secondary">DATE : {{ bookings.date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

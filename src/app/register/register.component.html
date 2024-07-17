@@ -1,0 +1,117 @@
+<!-- header -->
+<app-header></app-header>
+
+<!-- register page -->
+<section class="log text-center m-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <!-- Background image -->
+        <div
+          class="p-5 ms-4 image"
+          style="
+            background-image: url('https://i.postimg.cc/0546XKxy/Black-And-White-Illustrated-Eagle-Logo-removebg-preview.png');
+            background-repeat: no-repeat;
+            height: 200px;
+          "
+        ></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card bg-dark mt-4 w-100 ps-5 pe-5">
+          <div class="row d-flex justify-content-center mb-5 mt-5">
+            <h2 class="fw-bold mb-3 text-light">Register</h2>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <div class="">
+                <!-- validation error-username -->
+                <div
+                  *ngIf="
+                    this.registerForm.get('username')?.errors &&
+                    this.registerForm.get('username')?.touched
+                  "
+                  class="fw-bold text-danger"
+                >
+                  Invalid Username
+                </div>
+                <!-- username -->
+                <div class="form-floating mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                    formControlName="username"
+                  />
+                  <label for="username">User Name</label>
+                </div>
+                <!-- validation error-email -->
+                <div
+                  *ngIf="
+                    this.registerForm.get('email')?.errors &&
+                    this.registerForm.get('email')?.touched
+                  "
+                  class="fw-bold text-danger"
+                >
+                  Invalid E-mail
+                </div>
+
+                <!-- email -->
+                <div class="form-floating mb-2">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="username"
+                    id="email"
+                    placeholder="name@example.com"
+                    formControlName="email"
+                  />
+                  <label for="email">Email address</label>
+                </div>
+
+                <!-- validation error-password -->
+                <div
+                  *ngIf="
+                    this.registerForm.get('password')?.errors &&
+                    this.registerForm.get('password')?.touched
+                  "
+                  class="fw-bold text-danger"
+                >
+                  Invalid Password
+                </div>
+
+                <!-- password -->
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control mb-2"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    formControlName="password"
+                  />
+                  <label for="password">Password</label>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn text-light btn-block mb-3 mt-2 w-100 p-3"
+                style="background-color: #015155"
+              >
+                Register
+              </button>
+
+              <div class="row mb-4 px-3">
+                <small class="font-weight-bold text-light"
+                  >Already an user?
+                  <a routerLink="/login" class="text-primary">Login</a></small
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

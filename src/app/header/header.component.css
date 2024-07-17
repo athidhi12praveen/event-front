@@ -1,0 +1,27 @@
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 81, 83, 1) 0%,
+    rgba(0, 0, 0, 1) 55%
+  );
+}
+
+.navbar ul li a {
+  color: white;
+}
+
+.navbar ul li a:hover {
+  color: #02878c;
+  font-size: 18px;
+}
+
+#log {
+  transition-duration: 0.4s;
+  border: 1px solid rgb(177, 175, 175);
+}
+
+#log:hover {
+  background-color: #015155;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

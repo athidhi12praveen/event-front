@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<!-- booking details view -->
+<div class="my-card d-flex row ms-5 mt-5 mb-5 me-5">
+  <div
+    name="card"
+    *ngFor="let bookings of allbookings | findbookings : searchkey : 'usermail'"
+    class="card shadow p-2 col-lg-3 mb-5 text-light"
+    style="width: 100%"
+  >
+    <div className="">
+      <div class="row d-flex">
+        <div class="col-lg-5">
+          <img
+            [src]="bookings.eventimg"
+            alt="no image"
+            style="width: 100%; border-radius: 4px"
+            height="350px"
+          />
+        </div>
+        <div class="col-lg-7">
+          <p
+            class="card-text text-secondary text-center"
+            style="margin-top: 35px"
+          >
+            <span style="color: black">{{ bookings.name }} </span> -
+            {{ bookings.event }}
+          </p>
+          <p class="card-text text-secondary text-center">
+            E-MAIL : {{ bookings.usermail }}
+          </p>
+          <p class="card-text text-secondary text-center">
+            MOBILE : {{ bookings.mobile }}
+          </p>
+          <p class="card-text text-secondary text-center">
+            LOCATION : {{ bookings.location }}
+          </p>
+          <p class="card-text text-secondary text-center">
+            DATE : {{ bookings.date }}
+          </p>
+
+          <div
+            class="alert alert-warning alert-dismissible fade show mt-2"
+            role="alert"
+            style="width: 100%"
+          >
+            <strong>Confirmation!</strong> Once the booking is confirmed, our
+            team will contact you with in 24 hours in the given number -
+            {{ bookings.mobile }} or in the given e-mail -
+            {{ bookings.usermail }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="deletebooking(bookings._id)"
+        class="btn ms-auto mt-2"
+        style="
+          background: red;
+          color: white;
+          font-size: 18px;
+          padding-left: 35px;
+          padding-right: 35px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-align: center;
+          width: 100%;
+        "
+      >
+        <b>CANCEL BOOKING</b>
+      </button>
+    </div>
+  </div>
+</div>

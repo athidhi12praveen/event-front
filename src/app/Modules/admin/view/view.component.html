@@ -1,0 +1,120 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid mx-5 p-1">
+    <!-- logo -->
+    <a class="navbar-brand text-light" style="cursor: pointer">
+      <img
+        src="https://i.postimg.cc/0546XKxy/Black-And-White-Illustrated-Eagle-Logo-removebg-preview.png"
+        alt="Logo"
+        width="40"
+        height="40"
+        class="d-inline-block"
+      />
+      <span class="fw-bolder">BlueWings</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="background-color: white"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul
+        class="navbar-nav ms-auto mb-2 mb-lg-0"
+        style="font-weight: 600; font-size: 17px"
+      ></ul>
+      <span class="nav-item ms-auto" id="btn">
+        <!-- dashboard -->
+        <button
+          routerLink="/admin/dash"
+          type="button"
+          class="p-2 me-4 px-4 rounded fw-bolder"
+          id="dashboard"
+        >
+          Bookings <i class="fa-solid fa-book"></i>
+        </button>
+        <!-- add button -->
+        <button
+          routerLink="/admin/add"
+          type="button"
+          class="p-2 me-4 px-4 rounded fw-bolder"
+          id="login"
+        >
+          Add <i class="fa-solid fa-plus"></i>
+        </button>
+        <!-- logout button -->
+        <button
+          type="button"
+          class="p-2 px-4 rounded fw-bolder"
+          id="logout"
+          (click)="logout()"
+        >
+          Logout <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="card d-flex mb-5 pb-3 ms-2 mt-5" style="border: white">
+      <div class="row">
+        <div
+          *ngFor="let events of allevents"
+          routerLink="single/{{ events.id }}"
+          class="card shadow p-2 mb-5 text-light ms-2 me-5"
+          style="cursor: pointer; width: 380px"
+        >
+          <img
+            [src]="events.image"
+            class="card-img-top img-fluid"
+            alt="..."
+            routerLink="singleview/{{ events.id }}"
+          />
+
+          <div
+            class="card-body text-center p-2"
+            style="background-color: black; border-radius: 2px"
+          >
+            <h5
+              class="card-title"
+              style="font-style: italic; color: white"
+            ></h5>
+            <p class="card-text text-light">
+              {{ events.title }} <br /><span class="text-secondary">
+                {{ events.description }} </span
+              ><br /><span class="text-secondary"> {{ events.price }}</span>
+            </p>
+
+            <div class="d-flex justify-content-between ms-2 me-2 mb-2">
+              <button
+                type="button"
+                class="pt-2 pb-2 ps-4 pe-3 me-2 rounded fw-bolder bg-primary text-light"
+                id="login"
+                routerLink="/admin/edit/{{ events.id }}"
+              >
+                Edit <i class="fa-solid fa-pen text-light ms-2"></i>
+              </button>
+
+              <button
+                type="button"
+                class="p-2 me-2 rounded fw-bolder bg-danger text-light"
+                id="login"
+                (click)="deleteEvent(events._id)"
+              >
+                Delete <i class="fa-solid fa-trash text-light ms-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

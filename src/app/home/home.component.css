@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* header */
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 81, 83, 1) 0%,
+    rgba(0, 0, 0, 1) 55%
+  );
+}
+
+.navbar ul li a {
+  color: white;
+}
+
+.navbar ul li a:hover {
+  color: #02878c;
+  font-size: 18px;
+}
+
+#log {
+  transition-duration: 0.4s;
+  border: 1px solid rgb(177, 175, 175);
+}
+
+#log:hover {
+  background-color: #015155;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* home */
+.image {
+  background-image: url(https://i.pinimg.com/564x/0e/81/16/0e81165b627a9b29bc38498d8313527a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 91vh;
+}
+
+.heading {
+  font-size: 80px;
+  text-align: center;
+  color: #015155;
+}
+
+/* about */
+img {
+  border-radius: 5px;
+}
+
+.icon {
+  line-height: 2px;
+}
+
+/* parallax */
+main {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 80vh;
+  margin-top: 6vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.parallax {
+  background-image: url("https://d33wubrfki0l68.cloudfront.net/08a5585560d3ca3d5c38d396cbd519651dbdd7a6/c187d/static/01a72b157d9db15ef657c4bab762baff/7b789/laptop.jpg");
+  min-height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-content {
+  min-height: 80vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+.my-box {
+  background-color: #015155;
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: 90%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 0;
+  }
+
+  input,
+  textarea {
+    margin: 1em 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .heading {
+    font-size: 7vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 9vw;
+  }
+
+  .image {
+    height: 70vh;
+  }
+
+  .do .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 12vw;
+  }
+
+  .image {
+    height: 60vh;
+  }
+}
