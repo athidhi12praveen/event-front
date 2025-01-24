@@ -67,11 +67,11 @@
     <div class="card d-flex mb-5 pb-3 ms-2 mt-5" style="border: white">
       <div class="row">
         <div
-          *ngFor="let events of allevents"
-          routerLink="single/{{ events.id }}"
-          class="card shadow p-2 mb-5 text-light ms-2 me-5"
-          style="cursor: pointer; width: 380px"
-        >
+  *ngFor="let events of allevents"
+  routerLink="single/{{ events.id }}"
+  class="card shadow p-2 mb-5 text-light me-3 ms-4 ms-sm-0"
+  style="cursor: pointer; width: 310px"
+>
           <img
             [src]="events.image"
             class="card-img-top img-fluid"

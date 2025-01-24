@@ -48,6 +48,8 @@ export class AddComponent {
       });
     } else {
       alert('Invalid form');
+      this.route.navigateByUrl('admin/view');
+
     }
   }
 

@@ -16,6 +16,7 @@ export class DashboardComponent {
     this.getAllbookings();
   }
 
+  // get all bookings
   getAllbookings = () => {
     this.api.allbookings().subscribe({
       next: (res: any) => {
@@ -29,3 +30,4 @@ export class DashboardComponent {
     });
   };
 }
+

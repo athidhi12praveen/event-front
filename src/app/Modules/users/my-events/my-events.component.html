@@ -8,7 +8,7 @@
         <input class="form-control " [(ngModel)]="searchKey" type="text" name="search" placeholder="Search Events" >
       </div>
       <div class="row" >
-        <div *ngFor="let events of allevents | search : searchKey : 'title' "  class="card shadow p-2  mb-5 text-light ms-2  me-5" style=" cursor: pointer; width: 380px;">
+        <div *ngFor="let events of allevents | search : searchKey : 'title' "  class="card shadow p-2 mb-5 text-light me-3 ms-4 ms-sm-0" style=" cursor: pointer; width: 310px;">
           <img [src]="events.image" class="card-img-top img-fluid" alt="..." routerLink="singleview/{{events.id}}" />
             <div class="card-body text-center p-2" style="background-color: black; border-radius: 2px;">
               <h5 class="card-title" style=" color: white">{{events.title}}</h5>
